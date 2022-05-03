@@ -430,7 +430,7 @@ template<typename NUM> __global__ void make_gamma(size_t m, size_t n, size_t n_l
 
 				NUM U = uniforms[rand_index];
 
-				if (U < 1 - 0.331 * x_sq * x_sq || log(U) < 0.5 * x_sq + d * (1 - v + log(v))) {
+				if (U < 1 - 0.0331 * x_sq * x_sq || log(U) < 0.5 * x_sq + d * (1 - v + log(v))) {
 					size_t i = atomicAdd(&counter[j], 1);
 
 					if (i < blockDim.x && base_i + i < n) {
@@ -499,7 +499,7 @@ template<typename NUM> __global__ void make_gamma2(size_t m, size_t n, size_t n_
 
 				NUM U = uniforms[rand_index];
 
-				if (U < 1 - 0.331 * x_sq * x_sq || log(U) < 0.5 * x_sq + d * (1 - v + log(v))) {
+				if (U < 1 - 0.0331 * x_sq * x_sq || log(U) < 0.5 * x_sq + d * (1 - v + log(v))) {
 					size_t i = atomicAdd(&counter[j], 1);
 
 					if (i < blockDim.x && base_i + i < n) {
